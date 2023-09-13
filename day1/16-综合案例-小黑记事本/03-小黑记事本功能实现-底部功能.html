@@ -28,12 +28,12 @@
       </li>
     </ul>
   </section>
-  <!-- 统计和清空 -->
+  <!-- 统计和清空 → 如果没有任务了，底部隐藏掉 → v-show -->
   <footer class="footer" v-show="list.length > 0">
     <!-- 统计 -->
-    <span class="todo-count">合 计:<strong> {{list.length}} </strong></span>
+    <span class="todo-count">合 计:<strong> {{ list.length }} </strong></span>
     <!-- 清空 -->
-    <button class="clear-completed" @click="clear()">
+    <button @click="clear" class="clear-completed">
       清空任务
     </button>
   </footer>
@@ -51,6 +51,7 @@
       todoName: '',
       list: [
         { id: 1, name: '跑步一公里' },
+        { id: 2, name: '跳绳200个' },
         { id: 3, name: '游泳100米' },
       ]
     },
@@ -70,7 +71,7 @@
         })
         this.todoName = ''
       },
-      clear (){
+      clear () {
         this.list = []
       }
     }
