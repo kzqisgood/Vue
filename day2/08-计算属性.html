@@ -35,7 +35,7 @@
     </table>
 
     <!-- 目标：统计求和，求得礼物总数 -->
-    <p>礼物总数：? 个</p>
+    <p>礼物总数：{{totalCount}} 个</p>
   </div>
   <script src="./vue.js"></script>
   <script>
@@ -48,6 +48,13 @@
           { id: 2, name: '玩具', num: 2 },
           { id: 3, name: '铅笔', num: 5 },
         ]
+      },
+      computed:{
+        totalCount(){
+          //console.log(this.list)
+          let total = this.list.reduce((sum,item)=>sum+item.num,0)
+          return total
+        }
       }
     })
   </script>
