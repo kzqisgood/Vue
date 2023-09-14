@@ -15,7 +15,11 @@
 </head>
 <body>
   <div id="app">
-    <div class="box"></div>
+    <div class="box" :style="{width:'400px',height:'400px',backgroundColor:'blue'}"></div><!-- 不能直接写background-color
+                                                                  因为:style花括号内是一个js对象对象名内不能有带-属性名
+                                                                  非要用要这样写'background-color'或者用驼峰
+                                                                  backgroundColor
+      -->
   </div>
   <script src="./vue.js"></script>
   <script>
